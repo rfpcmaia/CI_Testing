@@ -7,8 +7,6 @@ const { createReadStream, unlinkSync } = require("fs");
 const multer = require("multer");
 const csvtojson = require("csvtojson");
 
-module.exports = db;
-
 const app = express();
 
 // Middleware
@@ -370,3 +368,5 @@ app.post("/submit-evaluation", (req, res) => {
     }
   });
 });
+
+module.exports = db;
