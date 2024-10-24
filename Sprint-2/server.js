@@ -7,6 +7,8 @@ const { createReadStream, unlinkSync } = require("fs");
 const multer = require("multer");
 const csvtojson = require("csvtojson");
 
+module.exports = db;
+
 const app = express();
 
 // Middleware
@@ -181,7 +183,7 @@ app.get("/TeamVis", (req, res) => {
     if (result && result.length > 0) {
       let teamMembers = [];
       result.forEach((student) => {
-        if(req.session.user.username != student.Username) {
+        if (req.session.user.username != student.Username) {
           teamMembers.push(student);
         }
       });
